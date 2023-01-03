@@ -104,16 +104,16 @@ require 'controll.php';
                     }
                     else box.checked = false;
                 })
-
-                saveImgBtn.onclick = () => {
-                    $.ajax({
-                        method: 'POST',
-                        url: '../gallery.php',
-                        data: {chosenImages: chosenImages}
-                    }).done(() => {
-                        $("#result").html('Zdjęcia zapamiętane')
-                    })
-                }
+                if (saveImgBtn != null)
+                    saveImgBtn.onclick = () => {
+                        $.ajax({
+                            method: 'POST',
+                            url: '../gallery.php',
+                            data: {chosenImages: chosenImages}
+                        }).done(() => {
+                            $("#result").html('Zdjęcia zapamiętane')
+                        })
+                    }
 
             })
 
