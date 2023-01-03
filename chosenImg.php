@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'chosenImgControll.php';
+require 'controll.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +38,7 @@ include 'chosenImgControll.php';
             || (count($_SESSION['chosenImages']) == 1 && $_SESSION['chosenImages'][0] == "")): ?>
                 <section id="gallery">
                     <div id="true-gallery">
-                        <h1 id="gal-title">Wybrane w Galerii zdjęcia, pojawią się tutaj.</h1>
+                        <h1 id="gal-title">Wybrane w galerii zdjęcia, pojawią się tutaj.</h1>
                     </div>
                 </section>
             <?php else: ?>
@@ -46,7 +46,7 @@ include 'chosenImgControll.php';
                     <div id="true-gallery">
                         <h1 id="gal-title">Wybrane zdjęcia</h1>
                         <div class="gallery-container">
-                            <?=showChosenImages($_SESSION['chosenImages'])?>
+                            <?=getChosenImages(getImg(), $_SESSION['chosenImages'])?>
                         </div>
                         <button id="delete-img">Usuń zaznaczone z zapamiętanych</button>
                         <div id="result" style="color:green;"></div>

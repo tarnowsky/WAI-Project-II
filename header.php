@@ -1,5 +1,5 @@
 <?php
-include "headerControll.php"
+require_once "controll.php";
 ?>
 <header>
     <div id="header-title">
@@ -48,7 +48,7 @@ include "headerControll.php"
                     <a href="uploadPhotos.php">Prześlij zdjęcie</a>
                 </span>
                 <span>
-                    <a href="login.php">Zaloguj</a>
+                    <?=$log_in_out?>
                 </span>
             </span>
             <span id="socials-in-burger">

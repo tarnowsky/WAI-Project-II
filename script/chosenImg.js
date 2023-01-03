@@ -19,7 +19,7 @@ if (deleteImgBtn != null)
     deleteImgBtn.onclick = () => {
             $.ajax({
                 method: 'POST',
-                url: 'chosenImg.php',
+                url: 'controll.php',
                 data: {delImg: chosenImages}
             }).done(() => {
                 $("#result").html('Zdjęcia usunięte')

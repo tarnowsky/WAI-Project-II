@@ -74,40 +74,38 @@ function getLoginById($user_id) {
     else return false;
 }
 
-function getImgMatchingTitle($title_chunk) {
-    $result_images = '';
-
-    if (empty($title_chunk)) return $result_images;
-    
+function getImg($filter = []) {
     $db = get_db();
-
-    $images = $db->images->find([]);
-
-    if (!empty($_SESSION['user_id']))
-        $user = $db->users->findOne(['_id' => getObjectWithId($_SESSION['user_id'])]);
-    else $user = null;
-
-    foreach ($images as $image) {
-        if ($image['visibility'] == 'public' || $image['uploaderID'] == $user['_id']) {
-
-            if ($image['visibility'] == 'private') $visibility = '<br>PRYWATNE';
-            else $visibility = '';
-
-            if (strpos($image['title'], $title_chunk) !== false) {
-                $result_images = $result_images.'
-                <div class="gallery-photo-container">
-                    <img class="gallery-photo" src="'.$image['path'].'" alt="zdjęcie" title="Zobacz zdjęcie" onclick="enlargePhoto(this)">
-                    <p>Autor: '.$image['author'].'<br>Tytuł: '.$image['title'].$visibility.'</p>
-                </div>
-                ';
-            }
-        }
-    }
-
-    return $result_images;
+    return $db->images->find($filter);
 }
 
-function getImagesForUser($page, )
+function getUserById($id) {
+    $db = get_db();
+    $user = $db->users->findOne(['_id' => getObjectWithId($id)]);
+    return $user;
+}
+
+function getImagesForUser($page, $page_size, $is_logged) {
+    $db = get_db();
+    $opts = ['skip' => ($page - 1) * $page_size, 'limit' => $page_size];
+
+    if ($is_logged) {
+        $imagesDir = $db->images->find(['$or' => [
+            ['visibility' => 'public'],
+            ['uploaderID' => $_SESSION['user_id']]]
+        ],
+        $opts);
+    }
+    else {
+        $imagesDir = $db->images->find(['visibility' => 'public'], $opts);
+    }
+    return $imagesDir;
+}
+
+function countDocsInColl($collection, $filter = []) {
+    $db = get_db();
+    return $db->$collection->count($filter);
+}
 
 function getObjectWithId($id) {
     return new ObjectID($id);

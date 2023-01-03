@@ -1,12 +1,6 @@
 <?php
 session_start();
-require 'controllFunc.php';
-if ($_SERVER['REQUEST_METHOD'] === 'POST'
-    && isset($_POST['title_chunk'])
-) {
-    echo getImgMatchingTitle($_POST['title_chunk']);
-    exit;
-}
+require 'controll.php';
 ?>
 <!DOCTYPE html>
 <html lang="pl-PL">

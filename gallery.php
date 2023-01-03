@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'galleryControll.php';
+require 'controll.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,19 +37,33 @@ include 'galleryControll.php';
             <section id="gallery">
                 <?php if ($how_many_pages != 0): ?>
                 <div class="arrow-container">
-                    <?=showArrow($page, $how_many_pages, 'left');?>
+                    <?=getGalleryArrow($page, $how_many_pages, 'left');?>
                 </div>
                 <div id="true-gallery">
                     <h1>Galeria zdjęć</h1>
                     <div class="gallery-container"> 
-                        <?=showImages($page, $_SESSION['chosenImages'], $how_many_on_page);?>
+                        <?php 
+                        if($logged) {
+                            echo getImagesForGallery(
+                                getImagesForUser($page, $how_many_on_page, $logged), 
+                                getUserById($_SESSION['user_id']),
+                                $_SESSION['chosenImages']);
+                        }
+                        else {
+                            echo getImagesForGallery(
+                                getImagesForUser($page, $how_many_on_page, $logged),
+                                null,
+                                $_SESSION['chosenImages']);
+                        }
+                        ?>
+                            
                     </div>
                         <a href="gallery.php?behv=clr">Wyczyść</a>
                         <button id="save-img">Zapamiętaj wybrane</button>
                         <div id="result" style="color:green;"></div>
                 </div>
                 <div class="arrow-container">
-                    <?=showArrow($page, $how_many_pages, 'right');?>
+                    <?=getGalleryArrow($page, $how_many_pages, 'right');?>
                 </div>
                 <?php else: ?>
                     <div id="true-gallery">

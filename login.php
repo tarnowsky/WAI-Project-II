@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "loginControll.php";
+require "controll.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include 'registerControll.php';
+include 'controll.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
