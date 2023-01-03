@@ -110,5 +110,4 @@ function countDocsInColl($collection, $filter = []) {
 function getObjectWithId($id) {
     return new ObjectID($id);
 }
-include 'viewFunc.php';
 ?>
