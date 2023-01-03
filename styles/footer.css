@@ -1,0 +1,110 @@
+@import 'header_styles.css';
+
+footer {
+    padding: 50px 0 0 0;
+    margin-top: 80px;
+    color: var(--lightgrey);
+    width: 100%;
+    background-color: var(--footer);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+footer #signature {
+    padding-top: 50px;
+    grid-column: 1 / 4;
+    justify-self: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer div {
+    padding: 10px 0 10px 0;
+    width: 100%;
+}
+
+footer div table {
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+
+footer a {
+    color: var(--lightgrey);
+}
+
+footer #newsletter {
+    display: flex;
+    flex-direction: column;
+}
+
+footer #newsletter h4 {
+    text-align: center;
+}
+
+footer form {
+    padding: 20px 10px 0 0;
+    margin: 0 auto 0 auto;
+    width: 300px;
+}
+
+footer input[type=text], footer select {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    margin: 2px 0 2px 0;
+}
+
+footer select {
+    background-color: var(--lightred);
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    color: var(--lightwhite);
+}
+
+footer input[type=submit] {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: var(--lightred);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    color: var(--lightwhite);
+    font-family: 'Nunito', sans-serif;
+    padding: 10px;
+}
+
+@media screen and (max-width: 850px) {
+    footer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    footer div {
+        padding: 30px 0 30px 0;
+    }
+
+    footer #sections {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+    footer #socials {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+    footer #newsletter {
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+    }
+    footer #signature {
+        grid-row: 3 / 4;
+        font-size: 0.8em;
+    }
+
+    footer form {
+        width: 80%;
+    }
+}

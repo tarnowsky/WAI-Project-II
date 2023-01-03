@@ -1,0 +1,151 @@
+@import 'header_styles.css';
+
+#nav-to-other-lyrics-container {
+    margin-top: 100px;
+}
+
+#nav-to-other-lyrics-container h2 {
+    margin-top: 150px;
+    color: var(--lightwhite);
+    text-align: center;
+    font-size: 5em;
+}
+
+#nav-to-other-lyrics-container h2::first-letter {
+    color: var(--red);
+}
+
+#nav-to-other-lyrics {
+    width: 100%;
+    display: flex;
+    row-gap: 50px;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.lyrics-link {
+    margin: 0 auto 0 auto;
+    font-size: 2em;
+}
+
+.lyrics-link::first-letter {
+    color: var(--red);
+    font-weight: bold;
+}
+
+.lyrics-link a{
+    color: var(--lightwhite);
+    transition: 0.2s;
+    padding: 5px 30px 5px 30px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background-color: var(--footer);
+}
+
+.lyrics-link a:hover {
+    color: var(--red);
+}
+
+
+
+.song {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+#first-song {
+    margin-top: 150px;
+}
+
+.song-title {
+    width:fit-content;
+    font-size: 5em;
+    padding: 0 10px 0 10px;
+    background-color: var(--darkgrey);
+    border-radius: 15px;
+    margin: 0 auto 0 auto;
+    z-index: 2;
+}
+
+.song-title, .song p {
+    text-align: center;
+}
+
+.song p {
+    padding: 0 10px 0 10px;
+}
+
+#song-navigation {
+    background-color: var(--darkgrey);
+    border-radius: 15px 0 0 15px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    top: 25%;
+    transform: translateY(-50%);
+    right: 0;
+    padding: 10px;
+}
+
+#song-navigation a{
+    text-align: right;
+    color: var(--lightwhite);
+    transition: 0.3s;
+}
+
+#song-navigation a::first-letter {
+    color: var(--red);
+    font-weight: bold;
+}
+
+#song-navigation a:hover {
+    color: var(--red);
+}
+
+.pointer-to-song {
+    width: 100%;
+    height: 120px;
+}
+
+#document-art {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 100px;
+}
+
+svg {
+    width: 150px;
+    height: 200px;
+}
+
+rect {
+    stroke-width: 8;
+    fill: var(--darkgrey);
+    stroke: var(--lightwhite);
+}
+
+line {
+    stroke: var(--lightwhite);
+    stroke-width: 5;
+}
+
+@media screen and (max-width: 1000px) {
+    #song-navigation{display: none;}
+}
+
+@media screen and (max-width: 800px) {
+    .song-title {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width:500px){
+    .lyrics-link {
+        font-size: 1.5em;
+    }
+}

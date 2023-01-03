@@ -1,0 +1,135 @@
+@import 'header_styles.css';
+
+#contact-container {
+    margin-top: 100px;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#contact h3 {
+    font-size: 1.8em;
+    width: 65%;
+    margin: 80px auto 10px auto;
+}
+
+#contact p {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#contact h3::first-letter {
+    color: var(--lightred);
+}
+
+#contact p {
+    color: var(--grey);
+}
+
+#moreContactBtn {
+    display: none;
+    width: fit-content;
+    margin: 10px auto 20px auto;
+    background-color: var(--lightred);
+    border-color: var(--lightred);
+    border-radius: 999px;
+    padding: 5px 10px 5px 10px;
+    color: var(--lightwhite);
+    cursor: pointer;
+}
+
+#contact h4 {
+    text-align: center;
+}
+
+#contact h4::first-letter {
+    color: var(--lightred);
+}
+
+#contact form {
+    width: 50%;
+    display: flex;
+    row-gap: 8px;
+    flex-direction: column;
+    margin: 20px auto 50px auto;
+}
+
+#contact input, #contact select {
+    border: 1px solid transparent;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#birthday {
+    display: flex;
+    column-gap: 20px;
+}
+
+#contact select {
+    background-color: var(--lightred);
+    color: var(--lightwhite);
+    cursor: pointer;
+}
+
+#contact input[type=submit] {
+    background-color: var(--lightred);
+    color: var(--lightwhite);
+    cursor: pointer;
+}
+
+#contact input[type=reset] {
+    cursor: pointer;
+}
+
+
+#birthday select,#birthday input {
+    width: 33%;
+    margin: 0;
+}
+
+.label-right {
+    margin-left: 5px;
+}
+
+#submit-form {
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#submit-form input {
+    width: 49%;
+    padding: 10px;
+}
+
+.value_no_js {
+    display: block;
+}
+
+@media screen and (max-width: 750px) {
+    #contact form {
+        width: 80%;
+    }
+
+    #contact h3 {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #submit-form {
+        display: flex;
+        flex-direction: column-reverse;
+        row-gap: 10px;
+        width: 100%;
+    }
+    
+    #submit-form input {
+        width: 100%;
+    }
+}

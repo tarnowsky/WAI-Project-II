@@ -1,0 +1,18 @@
+#searchBar-box {
+    margin-top: 50px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#searchBar-box label::first-letter {
+    color: #c3073f;
+    font-weight: bold
+}
+
+#searchBar {
+    width: 100%;
+}

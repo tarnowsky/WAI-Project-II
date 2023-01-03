@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import 'header_styles.css';
+
+/* font-family: 'Dancing Script', cursive;
+font-family: 'Nunito', sans-serif;
+color: #EDF5E1; */
+.pointers {
+    width: 100%;
+    height: 1px;
+}
+
+#music-pointer {
+    position: absolute;
+    top: 0;
+}
+
+#band1-pointer {
+    margin-bottom: 60px;
+}
+
+section {
+    display: flex;
+    width: 100%;
+    color: var(--lightwhite);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+section h1::selection {
+    background-color: var(--lightred);
+    color: var(--darkgrey);
+}
+
+section h1::first-letter {
+    color: var(--lightred);
+}
+
+section p::selection {
+    background-color: var(--lightwhite);
+    color: var(--darkgrey);
+}
+
+section p strong::selection {
+    background-color: var(--lightwhite);
+    color: var(--darkgrey);
+}
+
+p {
+    margin: 15px;
+}
+
+
+#music {
+    margin-top: 120px;
+}
+
+section .content-title-r {
+    display: block;
+    
+    font-size: 8em;
+    margin: auto;
+    padding: 0 40px 0 10px;
+}
+
+section .content-title-l {
+    display: block;
+    font-size: 8em;
+    margin: auto;
+    padding: 0 10px 0 20px;
+
+}
+
+section .content-info-r {
+    
+    font-size: 0.95em;
+    margin: auto;
+    text-align: right;
+    padding: 0 20px 0 10px;
+}
+
+section .content-info-l {
+    
+    font-size: 0.95em;
+    margin: auto;
+    padding: 0 10px 0 20px;
+}
+
+
+.photo-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 100px 0 50px 0;
+}
+
+.photo-box {
+    width: 90vw;
+    max-width: 2000px;
+}
+
+.photo-section .photo-box::after {
+    display: block;
+    opacity: 100%;
+    text-align: center;
+    
+    padding: 10px;
+    font-weight: normal;
+    font-size: 0.5em;
+    transition: 00.5s;
+    border-radius: 0 0 15px 15px;
+    color: var(--lightwhite);
+    background-color: var(--lightgrey);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo-element {
+    display: block;
+    margin: auto;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
+
+#music-school::after {
+    width: 200px;
+    content: "Szkoła Muzyczna I st. w Gdańsku";
+}
+
+#band::after {
+    width: 280px;
+    content: "Pierwszy koncert na festiwalu Przebi(j)śniegi";
+}
+
+#concert-photo::after {
+    width: 280px;
+    content: "Koncert na Stacji FoodHall na dachu galerii Metropolia";
+}
+
+main table {
+    margin: 100px auto 100px auto;
+    font-size: 0.95em;
+    
+    color: var(--lightwhite);
+}
+
+main table td::selection {
+    color: var(--darkgrey);
+    background-color: var(--lightwhite);
+}
+
+main table th {
+    color: var(--lightred);
+}
+
+main table th::selection {
+    color: var(--darkgrey);
+    background-color: var(--lightred);
+}
+
+main table th, main table td {
+    padding: 5px;
+    text-align: center;
+}
+
+section h3 {
+    color: var(--lightwhite);
+    text-align: center;
+    padding: 0 10px 0 10px;
+}
+
+#go-to-gallery {
+    margin: 100px 0 100px 0;
+    justify-content: center;
+}
+
+#go-to-gallery a{
+    text-decoration: none;
+    color: var(--lightred);
+}
+
+
+
+
+@media screen and (max-width: 850px) {
+    section {
+        display: inline-block;
+    }
+
+    section .content-title-l {
+        text-align: center;
+        font-size: 7em;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    
+    section .content-title-r {
+        text-align: center;
+        font-size: 7em;
+        padding: 0;
+        margin-bottom: 20px;
+        display: none;
+    }
+
+    section .content-info-l::before {
+        content: "Zespół";
+        width: 100%;
+        font-size: 7em;
+        margin-right: 20px;
+    }
+
+    section .content-info-l::first-letter {
+        color: var(--lightred);
+    }
+
+    section .content-info-l {
+        text-align: center;
+        margin-top: -40px;
+    }
+
+    section .content-info-r{
+        text-align: center;
+    }
+
+    main table {
+        margin: 50px auto 50px auto;
+    }
+}
+
+@media screen and (max-width: 500px){
+    section h1.content-title-l, section div.content-info-l::before {
+        font-size: 5em;
+    }
+}
+
+@media screen and (max-width: 420px){
+    #music {
+        margin-top: 100px;
+    }
+}
+
+#error-msg {
+    color: red;
+}
